@@ -41,4 +41,18 @@ app.controller('MyController', function($scope, $window, $firebaseArray, $fireba
 		$scope.dataArray = $firebaseArray(dbReference);
 	}
 
+	$scope.select = function(key, index) {
+		$scope.model = key;
+		$scope.index = index
+	}
+
+	$scope.index;
+	$scope.isUpdate;
+	$scope.update = function () {
+		$scope.dataArray.$save($scope.index)
+		.then( function success(ref) {
+			ref.key === $scope.dataArray[$scope.index].$id;			
+		})
+	}
+
 });

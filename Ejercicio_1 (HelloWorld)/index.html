@@ -15,28 +15,45 @@
 		<div class="container" ng-controller="MyController">
 			<!-- TODO write content here -->
 
+ <button class="btn" ng-click="stopFireBase()" >Destroy</button>
 
+        <button class="btn" ng-click="startFireBase()">Start</button>
+		
+<hr>
+
+		<button class="btn" ng-click="clear()">Clear</button>
+        <button class="btn" >Add</button>
+          	<button class="btn waves-effect waves-light" ng-click="add()">Submit
+    		<i class="material-icons right">send</i>
+  			</button>
+
+<button class="btn waves-effect waves-light" ng-click="add()">Edit
+    		<i class="material-icons right">send</i>
+  			</button>
+
+        <button class="btn" ng-click="update()">Update</button>
 
 			 <input ng-model="model.name" placeholder="Nombre">
 			 <input ng-model="model.email" placeholder="Email">
 			 <input ng-model="model.phoneNumber" placeholder="Número">
 			 
+			 
+       
+{{model}}
+
        
 
-		<button class="btn" ng-click="clear()">Clear</button>
-        <button class="btn" ng-click="add()">Add</button>
-        
-        <button class="btn" ng-click="stopFireBase()" >Destroy</button>
-
-        <button class="btn" ng-click="startFireBase()">Start</button>
-		<hr>
-
 			<p ng-repeat="nodo in dataArray">
-			{{nodo}}
-				{{nodo.fullName}} <br>
+			
+				{{nodo.name}} <br>
 				{{nodo.email}} <br>
 				{{nodo.phoneNumber}}
-				<a ng-click="delete($index)"> Delete</button>
+
+				<a class="waves-effect waves-light btn">button</a>
+<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+				<button class="btn" ng-click="select(nodo, $index)">select</button>
+				<button class="btn" ng-click="delete($index)"> Delete</button>
 				<a ng-click="getKey($index)"> Get Key</button>
 				<a ng-click="getIndex(nodo.$id)"> getIndex</button>
 
